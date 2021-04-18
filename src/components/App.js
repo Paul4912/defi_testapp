@@ -66,6 +66,7 @@ class App extends Component {
 
     const daiTokenData = DaiToken.networks[networkId]
     if(daiTokenData) {
+      console.log(daiTokenData)
       const daiToken = new web3.eth.Contract(DaiToken.abi, daiTokenData.address)
       this.setState({ daiToken })
       let daiTokenBalance = await daiToken.methods.balanceOf(this.state.account).call()
@@ -77,6 +78,7 @@ class App extends Component {
 
     const dappTokenData = DappToken.networks[networkId]
     if(dappTokenData) {
+      console.log(dappTokenData)
       const dappToken = new web3.eth.Contract(DappToken.abi, dappTokenData.address)
       this.setState({ dappToken })
       let dappTokenBalance = await dappToken.methods.balanceOf(this.state.account).call()
